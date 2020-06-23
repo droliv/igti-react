@@ -1,16 +1,15 @@
-import React, { Component } from 'react'
+import React from 'react'
 
-export default class IncrementButton extends Component {
-
-    hadleButtonClick = () => {
-        this.props.onIncrement('+')
+// functional component
+export default function IncrementButton(props) {
+    const { onIncrement } = props
+    const hadleButtonClick = () => {
+        onIncrement('+')
     }
-    render() {
         return (
 
                 <button 
                 className="waves-effect waves-light btn green darken-4"
-                onClick={this.hadleButtonClick}>+</button>
+                onClick={hadleButtonClick}>+</button>
         )
-    }
 }
